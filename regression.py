@@ -2,8 +2,9 @@ import numpy as np
 import csv
 import datetime
 # Reading data from the CSV file
+file_name1 = str(input("Enter the name of the csv file: "))
 x, y = [], []
-with open('model.csv', 'r') as file:
+with open(file_name1, 'r') as file:
     reader = csv.reader(file)
     next(reader)
     for row in reader:
@@ -25,7 +26,7 @@ summationTwo = np.sum(xSubracted_To_xBar_Squared)
 slope = summationOne/summationTwo
 yIntercept = yBar - slope * xBar
 print('xBar: '+str(xBar))
-print('yBar: '+str(yIntercept))
+print('yBar: '+str(yBar))
 print('Slope: '+str(slope))
 print('y-Intercept: '+str(yIntercept))
 
